@@ -17,7 +17,8 @@ try {
         Write-Host "Precisamos instalar o sub sistema do Linux"
         Write-Host "Iniciando instalacao do WSL"
         dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-        Write-Host "Com a instalacao concluida, precisamos reiniciar o computador para concluir"
+        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -Norestart
+        Write-Host "Com a instalacao finalizada, precisamos reiniciar o computador para concluir"
         Write-Host "Reinicie e rode novamente esse script"
         Pause 
         exit
